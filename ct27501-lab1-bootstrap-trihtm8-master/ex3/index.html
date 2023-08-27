@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>>
+    <link rel="stylesheet" href="css/all.min.css" type="text/css">
+    <title>Biểu mẫu đăng nhập</title>
+    <script>
+        function show() {
+            alert("Email bạn đã nhập: " + document.getElementById("email").value + "\r\n" +
+            "Mật khẩu bạn đã nhập: " + document.getElementById("pwd").value + "\r\n" +
+            "Remember: " + document.getElementById("remember").checked);
+            return false;
+        }
+        function show1() {
+            alert("Email bạn đã nhập: " + document.getElementById("email1").value + "\r\n" +
+            "Mật khẩu bạn đã nhập: " + document.getElementById("pwd1").value + "\r\n" +
+            "Remember: " + document.getElementById("remember1").checked);
+            return false;
+        }
+        function show2() {
+            alert("Email bạn đã nhập: " + document.getElementById("email2").value + "\r\n" +
+            "Mật khẩu bạn đã nhập: " + document.getElementById("pwd2").value + "\r\n" +
+            "Remember: " + document.getElementById("remember2").checked);
+            return false;
+        }
+        function show3() {
+            alert("Email bạn đã nhập: " + document.getElementById("email3").value + "\r\n" +
+            "Mật khẩu bạn đã nhập: " + document.getElementById("pwd3").value + "\r\n" +
+            "Remember: " + document.getElementById("remember3").checked);
+            return false;
+        }
+    </script>
+    <style>
+      .open{
+        border: 2px ridge #78f8ff;
+        padding: 0px;
+        border-radius: 5px;
+        margin-top: 20px;
+        width: fit-content;
+      }
+      .open-header{
+        background-color: #78f8ff;
+        text-align: center;
+      }
+    </style>
+    <style>
+      .collapse{
+        border: 2px ridge #78f8ff;
+        padding: 0px;
+        border-radius: 5px;
+        margin-top: 20px;
+        width: 50%;
+      }
+      .collapse-header{
+        background-color: #78f8ff;
+        text-align: center;
+      }
+      .collapse>form{
+        margin: 10px;
+      }
+      form label{
+        font-weight: bold;
+      }
+      #inlineform{
+        width: max-content;
+      }
+      .form-inline label, .form-inline input{
+        margin-left: 10px;
+      }
+    </style>
+</head>
+<body>
+  <div class="open container">
+    <div class="open-header"><h1 class="display-7">Mở biểu mẫu đăng nhập</h1></div>
+    <button data-toggle="collapse" data-target="#verticalform">Vertical form</button>
+    <button data-toggle="collapse" data-target="#inlineform">Inline form</button>
+    <button data-toggle="collapse" data-target="#horizontalform">Horizontal form</button>
+    <button data-toggle="modal" data-target="#myModal">
+      Open modal
+    </button>
+  </div>
+    
+  
+    <div id="verticalform" class="container collapse">
+        <div class="container-fluid collapse-header"><h2>Vertical form</h2></div>
+        <form action="javascrip:void(0)" onsubmit="show()" method="post">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Mật khẩu:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" name="pwd">
+          </div>
+          <div class="checkbox">
+            <label><input id="remember" type="checkbox" name="remember"> Ghi nhớ đăng nhập</label>
+          </div>
+          <button type="submit" class="btn btn-secondary">Đăng nhập</button>
+        </form>
+    </div>
+
+    <div id="inlineform" class="container collapse">
+        <div class="collapse-header"><h2>Inline form</h2></div>
+        <form action="javascrip:void(0)" onsubmit="show1()" method="post" class="form-inline">
+          <div class="form-group">
+            <label for="email1"><i class="fas fa-user"></i></label>
+            <input type="email" class="form-control" id="email1" placeholder="Nhập email" name="email1">
+          </div>
+          <div class="form-group">
+            <label for="pwd"><i class="fas fa-lock"></i></label>
+            <input type="password" class="form-control" id="pwd1" placeholder="Nhập mật khẩu" name="pwd1">
+          </div>
+          <div class="checkbox">
+            <label><input id="remember1" type="checkbox" name="remember1"> Ghi nhớ đăng nhập</label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="margin-left: 10px;">Đăng nhập</button>
+        </form>
+    </div>
+
+    <div id="horizontalform" class="container collapse">
+      <div class="collapse-header"><h2>Horizontal form</h2></div>
+      <form action="javascrip:void(0)" onsubmit="show2()" method="post">
+        <div class="form-group form-inline row">
+          <label class="col-2" for="email2">Email:</label>
+          <input class="col-9" type="email" class="form-control" id="email2" placeholder="Nhập email" name="email2">
+        </div>
+        <div class="form-group form-inline row">
+          <label class="col-2" for="pwd">Mật khẩu:</label>
+          <input class="col-9" type="password" class="form-control" id="pwd2" placeholder="Nhập mật khẩu" name="pwd2">
+        </div>
+        <div class="row">
+          <div class="checkbox col-3">
+            <label><input id="remember2" type="checkbox" name="remember2"> Ghi nhớ đăng nhập</label>
+          </div>
+          <button type="submit" class="btn btn-secondary col-2" style="padding: 0px;">Đăng nhập</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- The Modal -->
+<div class="modal modal-fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-center d-block" id="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fas fa-lock"></i>  Đăng nhập</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="javascrip:void(0)" onsubmit="show3()" method="post">
+          <div class="form-group">
+            <label for="email"><i class="fas fa-user"></i>  Người dùng</label>
+            <input type="email" class="form-control" id="email3" placeholder="Nhập email" name="email3">
+          </div>
+          <div class="form-group">
+            <label for="pwd"><i class="fas fa-eye"></i>  Mật khẩu:</label>
+            <input type="password" class="form-control" id="pwd3" placeholder="Nhập mật khẩu" name="pwd3">
+          </div>
+          <div class="checkbox">
+            <label><input id="remember3" type="checkbox" name="remember3"> Ghi nhớ đăng nhập</label>
+          </div>
+          <button type="submit" class="btn btn-secondary">Đăng nhập</button>
+        </form>
+      
+
+      <!-- Modal footer -->
+      <hr size="2px"/>
+      <div class="container-fluid clearfix">
+        <div class="float-left">
+          <button class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
+        </div>
+        <div class="float-right text-right">
+          <p>Bạn chưa phải là thành viên? <a href="#"> Đăng ký ngay</a></p>
+          <p>Bạn <a href="#">quên mật khẩu</a>?</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
